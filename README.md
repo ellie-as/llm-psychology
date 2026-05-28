@@ -7,6 +7,9 @@ Install it with:
 pip install .
 ```
 
+> [!NOTE]
+> For code to reproduce results in Spens & Burgess (2026), see [`ellie-as/hippocampal-neocortical-RAG`](https://github.com/ellie-as/hippocampal-neocortical-RAG) instead.
+
 ## Tutorial notebooks
 
 See the following notebooks for tutorials:
