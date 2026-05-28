@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-psychology"
+version = "0.0.1"
+description = "Tools to simulate behavioural tasks with local LLMs and explore learned representations"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Eleanor Spens", email = "eleanor@example.com" }
+]
+keywords = ["NLP", "LLM", "psychology", "cognitive", "RAG", "transformers"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=1.5",
+  "scikit-learn>=1.1",
+  "matplotlib>=3.6",
+  "tqdm>=4.65",
+  "transformers>=4.41",
+  "tokenizers>=0.19",
+  "datasets>=2.19",
+  "accelerate>=0.29",
+  "peft>=0.11",
+  "faiss-cpu>=1.7.4",
+  "sentence-transformers>=2.6",
+  "sentencepiece>=0.2",
+  "torch>=2.2; platform_system != 'Darwin' or platform_machine != 'arm64'",
+]
+
+[project.optional-dependencies]
+torch = [
+  # Apple Silicon CPU-only torch. Users can choose alternatives as needed.
+  "torch>=2.2; platform_system == 'Darwin' and platform_machine == 'arm64'",
+]
+dev = [
+  "pytest>=7",
+  "black>=24",
+  "isort>=5",
+]
+tutorials = [
+  "gdown>=5",
+]
+
+[project.urls]
+Homepage = "https://github.com/"
+Issues = "https://github.com/"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = { find = { where = ["src"] } }
+
+[tool.setuptools.package-data]
+"llm_psychology.data" = ["stories_train.csv"]
