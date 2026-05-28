@@ -7,8 +7,15 @@ Install it with:
 pip install .
 ```
 
-> [!NOTE]
-> For code to reproduce results in Spens & Burgess (2026), see [`ellie-as/hippocampal-neocortical-RAG`](https://github.com/ellie-as/hippocampal-neocortical-RAG) instead.
+## Background
+
+Spens & Burgess (2026) proposes a model of the interaction between episodic and semantic memory.
+
+**TL;DR version:**
+
+<img width="710" height="215" alt="memory_model" src="https://github.com/user-attachments/assets/c22ad3a0-26ae-405f-9755-e3d836d3ef45" />
+
+This code provides tools / examples that other researchers may find useful. For code to reproduce results in Spens & Burgess (2026), see [`ellie-as/hippocampal-neocortical-RAG`](https://github.com/ellie-as/hippocampal-neocortical-RAG) instead.
 
 ## Tutorial notebooks
 
@@ -86,3 +93,5 @@ datastore = xrag.prepare_datastore(stories["text"].tolist())
 answer = xrag.answer("Melody went to the aquarium... What happened next?", datastore)
 print(answer.text)
 ```
+
+Note that this repository is largely a port of the excellent [xRAG](https://github.com/Hannibal046/xRAG) code by Cheng et al. (2024). See their [paper](https://arxiv.org/pdf/2405.13792) and [GitHub repository](https://github.com/Hannibal046/xRAG).
